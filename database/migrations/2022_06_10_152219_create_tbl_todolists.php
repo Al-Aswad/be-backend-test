@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_todolist', function (Blueprint $table) {
+        Schema::create('tbl_todolists', function (Blueprint $table) {
             $table->id();
+            $table->string('todo');
+            $table->boolean('isDone')->default(false);
             $table->timestamps();
         });
     }
