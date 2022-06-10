@@ -10,7 +10,7 @@ class TodolistController extends Controller
 {
     public function getTodos()
     {
-        $todos = TodolistModel::all();
+        $todos = TodolistModel::orderBy('created_at', 'DESC')->get();
         return response()->json($todos);
     }
 
