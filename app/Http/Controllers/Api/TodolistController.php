@@ -20,14 +20,6 @@ class TodolistController extends Controller
         return response()->json($todo);
     }
 
-    public function isDone(Request $request)
-    {
-        $todo = TodolistModel::find($request->id);
-        $todo->is_done = 1;
-        $todo->save();
-        return response()->json($todo);
-    }
-
     public function deleteTodo(Request $request)
     {
         $todo = TodolistModel::find($request->id);
